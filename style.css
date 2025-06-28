@@ -1,8 +1,8 @@
 /* Estilos Gerais e Fontes */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #fdfaf6;
-    color: #4a4a4a;
+    background-color: #f6f9fd;
+    color: #000d30;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,12 +24,12 @@ body {
     width: 100%;
     padding: 30px 40px;
     text-align: center;
-    border-top: 5px solid #c9a987;
+    border-top: 5px solid #000441;
 }
 
 header h1 {
     font-family: 'Playfair Display', serif;
-    color: #333;
+    color: #08004d;
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
@@ -44,7 +44,7 @@ header p {
     width: 100%;
     padding: 12px;
     font-size: 1rem;
-    border: 1px solid #ddd;
+    border: 1px solid #d6e7ff;
     border-radius: 8px;
     margin-top: 20px;
     box-sizing: border-box;
@@ -64,7 +64,7 @@ header p {
 }
 
 .result-item:hover {
-    background-color: #e9e2db;
+    background-color: #d3e6ff;
 }
 
 .result-item:first-child {
@@ -111,7 +111,7 @@ header p {
 }
 
 button[type="submit"] {
-    background-color: #c9a987;
+    background-color: #0c004e;
     color: white;
     border: none;
     padding: 15px 30px;
@@ -124,7 +124,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #b38b6d;
+    background-color: #070044;
 }
 
 /* Mensagens de Feedback */
@@ -143,8 +143,8 @@ button[type="submit"]:hover {
     color: #a73434;
 }
 .message-loading {
-    background-color: #e2e8fde0;
-    color: #3456a7;
+    background-color: #00104be0;
+    color: #fafafa;
 }
 
 /* Rodapé */
