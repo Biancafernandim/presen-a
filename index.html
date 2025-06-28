@@ -11,44 +11,75 @@
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Confirme sua Presença</h1>
-            <p>Digite seu nome.</p>
-        </header>
+    <div class="tabs-container">
+        <div class="tab-nav">
+            <button class="tab-btn active" data-tab="rsvp">Confirmar Presença</button>
+            <button class="tab-btn" data-tab="gifts">Lista de Presentes</button>
+        </div>
 
-        <main>
-            <div id="searchSection">
-                <input type="text" id="searchInput" placeholder="Digite seu nome aqui...">
-                <div id="searchResults"></div>
+        <div class="tab-content-container">
+
+            <div id="rsvp" class="tab-content active">
+                <header>
+                    <h1>Confirme sua Presença</h1>
+                    <p>Digite seu nome como está no convite para iniciar.</p>
+                </header>
+                <main>
+                    <div id="searchSection">
+                        <input type="text" id="searchInput" placeholder="Digite seu nome aqui...">
+                        <div id="searchResults"></div>
+                    </div>
+                    <form id="rsvpSection" class="hidden">
+                        <h2>Olá, <span id="guestName"></span>!</h2>
+                        <p>Ficamos felizes com a sua visita. Você poderá comparecer?</p>
+                        <div class="radio-group">
+                            <label><input type="radio" name="attendance" value="Confirmado" required> Sim, estarei lá!</label>
+                            <label><input type="radio" name="attendance" value="Não comparecerá"> Não poderei comparecer.</label>
+                        </div>
+                        <div id="companionsContainer" class="hidden">
+                            <h3>Por favor, confirme quem irá com você:</h3>
+                            <div id="companionsList"></div>
+                        </div>
+                        
+                        <button type="submit">
+                            <span class="btn-text">Enviar Confirmação</span>
+                            <span class="btn-loader hidden"></span>
+                        </button>
+
+                    </form>
+                    <div id="message"></div>
+                    
+                    <div id="post-rsvp-actions" class="hidden">
+                        <a id="addToCalendarBtn" href="#" target="_blank" class="post-rsvp-btn calendar">
+                            📅 Adicionar ao Calendário
+                        </a>
+                        <a id="whatsappBtn" href="#" target="_blank" class="post-rsvp-btn whatsapp">
+                            💬 Enviar confirmação pelo WhatsApp
+                        </a>
+                    </div>
+                </main>
+                <footer>
+                    <p>Com carinho, Yan Hiu e Bianca Fernandim</p>
+                </footer>
             </div>
 
-            <form id="rsvpSection" class="hidden">
-                <h2>Olá, <span id="guestName"></span>!</h2>
-                <p>Você poderá comparecer?</p>
-                
-                <div class="radio-group">
-                    <label><input type="radio" name="attendance" value="Confirmado" required> Sim, estarei lá!</label>
-                    <label><input type="radio" name="attendance" value="Não comparecerá"> Não poderei comparecer.</label>
-                </div>
+            <div id="gifts" class="tab-content">
+                <header>
+                    <h2>Lista de Presentes</h2>
+                    <p>Nossa alegria é compartilhar esse momento com vocês! Já temos o essencial para nossa casa, então, nos ajude a criar memórias inesquecíveis na nossa lua de mel!💕</p>
+                </header>
+                <main>
+                    <div class="gift-buttons">
+                        <a href="https://biolivre.com.br/biancaeyan" target="_blank" class="gift-btn">Lista de Presentes</a>
+                    <p>Nossa lista de presentes é 100% online no Mercado Pago! O valor que você escolher nos presentear cairá direto na nossa conta. Agradecemos imensamente o carinho</p>
+                    </div>
+                </main>
+            </div>
 
-                <div id="companionsContainer" class="hidden">
-                    <h3>Por favor, confirme quem irá com você:</h3>
-                    <div id="companionsList">
-                        </div>
-                </div>
-
-                <button type="submit">Enviar Confirmação</button>
-            </form>
-
-            <div id="message"></div>
-        </main>
-
-        <footer>
-            <p>Com carinho, Yan Hiu e Bianca Fernandim</p>
-        </footer>
+        </div>
     </div>
 
     <script src="script.js"></script>
+
 </body>
 </html>
