@@ -94,7 +94,7 @@ header p {
 #companionsContainer {
     margin-top: 20px;
     padding: 15px;
-    background-color: #fdfaf6;
+    background-color: #f6f9fd; /* Cor de fundo combinando com o body */
     border-radius: 8px;
     text-align: left;
 }
@@ -152,4 +152,33 @@ footer {
     margin-top: 30px;
     font-style: italic;
     color: #999;
+}
+
+/* --- ESTILOS PARA O CAMPO DE SOBRENOME (COM SUAS CORES) --- */
+
+.companion-item {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaçamento entre os itens */
+    margin-bottom: 12px;
+}
+
+.companion-item .firstname {
+    font-weight: bold;
+}
+
+.companion-item .lastname-input {
+    padding: 8px 10px;
+    border: 1px solid #d6e7ff; /* Borda combinando com sua busca */
+    border-radius: 8px; /* Raio da borda combinando com sua busca */
+    font-size: 0.9rem;
+    flex-grow: 1; 
+}
+
+/* Garante que o checkbox e o label fiquem juntos */
+.companion-item label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
 }
