@@ -1,5 +1,5 @@
 // IMPORTANTE: Cole aqui a URL do seu script publicado
-const SCRIPT_URL = "URL_DO_SEU_SCRIPT_AQUI";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxVAMrhRnKzsSVloVecE_nurxVHUOOLJOiMb0vXfBdjU_S7Q6J06IXSieuGk8_42pd_/exec";
 
 // --- ELEMENTOS DO DOM ---
 const searchSection = document.getElementById('searchSection');
