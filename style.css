@@ -1,0 +1,155 @@
+/* Estilos Gerais e Fontes */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fdfaf6;
+    color: #4a4a4a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Container Principal */
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    width: 100%;
+    padding: 30px 40px;
+    text-align: center;
+    border-top: 5px solid #c9a987;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Seção de Busca */
+#searchInput {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+#searchResults {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.result-item {
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.result-item:hover {
+    background-color: #e9e2db;
+}
+
+.result-item:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+.result-item:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom: none;
+}
+
+/* Formulário de Confirmação */
+#rsvpSection h2 {
+    font-family: 'Playfair Display', serif;
+    margin-top: 20px;
+}
+
+.radio-group {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#companionsContainer {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #fdfaf6;
+    border-radius: 8px;
+    text-align: left;
+}
+
+#companionsContainer h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+}
+
+#companionsList label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #c9a987;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+    background-color: #b38b6d;
+}
+
+/* Mensagens de Feedback */
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 8px;
+}
+.message-success {
+    background-color: #e4f8e9;
+    color: #277c42;
+}
+.message-error {
+    background-color: #fde2e2;
+    color: #a73434;
+}
+.message-loading {
+    background-color: #e2e8fde0;
+    color: #3456a7;
+}
+
+/* Rodapé */
+footer {
+    margin-top: 30px;
+    font-style: italic;
+    color: #999;
+}

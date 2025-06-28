@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Presença | Nosso Casamento</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Confirme sua Presença</h1>
+            <p>Digite seu nome como está no convite para iniciar.</p>
+        </header>
+
+        <main>
+            <div id="searchSection">
+                <input type="text" id="searchInput" placeholder="Digite seu nome aqui...">
+                <div id="searchResults"></div>
+            </div>
+
+            <form id="rsvpSection" class="hidden">
+                <h2>Olá, <span id="guestName"></span>!</h2>
+                <p>Ficamos felizes com a sua visita. Você poderá comparecer?</p>
+                
+                <div class="radio-group">
+                    <label><input type="radio" name="attendance" value="Confirmado" required> Sim, estarei lá!</label>
+                    <label><input type="radio" name="attendance" value="Não comparecerá"> Não poderei comparecer.</label>
+                </div>
+
+                <div id="companionsContainer" class="hidden">
+                    <h3>Por favor, confirme quem irá com você:</h3>
+                    <div id="companionsList">
+                        </div>
+                </div>
+
+                <button type="submit">Enviar Confirmação</button>
+            </form>
+
+            <div id="message"></div>
+        </main>
+
+        <footer>
+            <p>Com carinho, Yan Hiu e Bianca Fernandim</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
