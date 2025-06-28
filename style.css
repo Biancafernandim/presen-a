@@ -111,11 +111,11 @@ footer { margin-top: 30px; font-style: italic; color: #999; }
     transition: background-color 0.3s;
     text-decoration: none;
     display: inline-block;
-    /* LINHA ADICIONADA PARA CORRIGIR O ALINHAMENTO */
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
-
 .gift-btn:hover { background-color: #070044; }
+
+/* Estilos para os Botões Pós-Confirmação */
 #post-rsvp-actions { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #d6e7ff; }
 .post-rsvp-btn { padding: 15px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; transition: transform 0.2s ease; }
 .post-rsvp-btn:hover { transform: scale(1.03); }
@@ -161,6 +161,7 @@ footer { margin-top: 30px; font-style: italic; color: #999; }
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
+/* Imagem do presente com o tamanho corrigido */
 .gift-item img {
     width: 100%;
     height: 150px;
