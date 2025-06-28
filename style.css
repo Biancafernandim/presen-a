@@ -5,41 +5,54 @@ body {
     color: #000d30;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
     margin: 0;
     padding: 20px;
 }
 
-.hidden {
-    display: none !important;
-}
+.hidden { display: none !important; }
 
-/* Container Principal */
-.container {
+/* Container Principal das Abas */
+.tabs-container {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
     max-width: 500px;
     width: 100%;
-    padding: 30px 40px;
     text-align: center;
-    border-top: 5px solid #000441;
+    overflow: hidden;
 }
 
-header h1 {
+/* Estilos do Sistema de Abas */
+.tab-nav { display: flex; background-color: #f6f9fd; }
+.tab-btn {
+    flex-grow: 1;
+    padding: 15px 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    color: #777;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+.tab-btn:hover { color: #08004d; }
+.tab-btn.active { color: #08004d; border-bottom: 3px solid #000441; }
+.tab-content-container { padding: 30px 40px; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* Estilos do Conteúdo Interno */
+header h1, #gifts h2 {
     font-family: 'Playfair Display', serif;
     color: #08004d;
     font-size: 2.5rem;
     margin-bottom: 10px;
 }
-
-header p {
-    font-size: 1rem;
-    color: #777;
-}
-
-/* Seção de Busca */
+#gifts h2 { font-size: 2rem; }
+header p { font-size: 1rem; color: #777; }
 #searchInput {
     width: 100%;
     padding: 12px;
@@ -49,12 +62,7 @@ header p {
     margin-top: 20px;
     box-sizing: border-box;
 }
-
-#searchResults {
-    margin-top: 10px;
-    text-align: left;
-}
-
+#searchResults { margin-top: 10px; text-align: left; }
 .result-item {
     padding: 12px;
     background-color: #f9f9f9;
@@ -62,54 +70,11 @@ header p {
     cursor: pointer;
     transition: background-color 0.2s;
 }
-
-.result-item:hover {
-    background-color: #d3e6ff;
-}
-
-.result-item:first-child {
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-}
-.result-item:last-child {
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border-bottom: none;
-}
-
-/* Formulário de Confirmação */
-#rsvpSection h2 {
-    font-family: 'Playfair Display', serif;
-    margin-top: 20px;
-}
-
-.radio-group {
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-}
-
-#companionsContainer {
-    margin-top: 20px;
-    padding: 15px;
-    background-color: #f6f9fd; /* Cor de fundo combinando com o body */
-    border-radius: 8px;
-    text-align: left;
-}
-
-#companionsContainer h3 {
-    margin-top: 0;
-    font-size: 1.1rem;
-}
-
-#companionsList label {
-    display: block;
-    margin-bottom: 10px;
-    cursor: pointer;
-}
-
+.result-item:hover { background-color: #d3e6ff; }
+#rsvpSection h2 { font-family: 'Playfair Display', serif; margin-top: 20px; }
+.radio-group { margin: 20px 0; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+#companionsContainer { margin-top: 20px; padding: 15px; background-color: #f6f9fd; border-radius: 8px; text-align: left; }
+#companionsContainer h3 { margin-top: 0; font-size: 1.1rem; }
 button[type="submit"] {
     background-color: #0c004e;
     color: white;
@@ -122,63 +87,45 @@ button[type="submit"] {
     transition: background-color 0.3s;
     margin-top: 20px;
 }
+button[type="submit"]:hover { background-color: #070044; }
+#message { margin-top: 20px; font-weight: bold; padding: 15px; border-radius: 8px; }
+.message-success { background-color: #e4f8e9; color: #277c42; }
+.message-error { background-color: #fde2e2; color: #a73434; }
+.message-loading { background-color: #00104be0; color: #fafafa; }
+footer { margin-top: 30px; font-style: italic; color: #999; }
+.companion-item { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.companion-item .lastname-input { padding: 8px 10px; border: 1px solid #d6e7ff; border-radius: 8px; font-size: 0.9rem; flex-grow: 1; }
+.companion-item label { display: flex; align-items: center; gap: 8px; margin-bottom: 0; }
+.gift-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 20px; }
+.gift-btn { background-color: #0c004e; color: white; border: none; padding: 15px 30px; font-size: 1rem; font-weight: bold; border-radius: 8px; cursor: pointer; transition: background-color 0.3s; text-decoration: none; display: inline-block; }
+.gift-btn:hover { background-color: #070044; }
+#post-rsvp-actions { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; padding-top: 20px; border-top: 1px solid #d6e7ff; }
+.post-rsvp-btn { padding: 15px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; color: white; transition: transform 0.2s ease; }
+.post-rsvp-btn:hover { transform: scale(1.03); }
+.post-rsvp-btn.calendar { background-color: #b8d4f3; }
+.post-rsvp-btn.whatsapp { background-color: #86cfa1; }
 
-button[type="submit"]:hover {
-    background-color: #070044;
-}
+/* --- ESTILOS PARA O ÍCONE DE CARREGAMENTO NO BOTÃO --- */
 
-/* Mensagens de Feedback */
-#message {
-    margin-top: 20px;
-    font-weight: bold;
-    padding: 15px;
-    border-radius: 8px;
-}
-.message-success {
-    background-color: #e4f8e9;
-    color: #277c42;
-}
-.message-error {
-    background-color: #fde2e2;
-    color: #a73434;
-}
-.message-loading {
-    background-color: #00104be0;
-    color: #fafafa;
-}
-
-/* Rodapé */
-footer {
-    margin-top: 30px;
-    font-style: italic;
-    color: #999;
+/* Esconde o loader por padrão */
+.btn-loader.hidden {
+    display: none;
 }
 
-/* --- ESTILOS PARA O CAMPO DE SOBRENOME (COM SUAS CORES) --- */
-
-.companion-item {
-    display: flex;
-    align-items: center;
-    gap: 8px; /* Espaçamento entre os itens */
-    margin-bottom: 12px;
+/* O círculo giratório */
+.btn-loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 1s linear infinite;
 }
 
-.companion-item .firstname {
-    font-weight: bold;
-}
-
-.companion-item .lastname-input {
-    padding: 8px 10px;
-    border: 1px solid #d6e7ff; /* Borda combinando com sua busca */
-    border-radius: 8px; /* Raio da borda combinando com sua busca */
-    font-size: 0.9rem;
-    flex-grow: 1; 
-}
-
-/* Garante que o checkbox e o label fiquem juntos */
-.companion-item label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 0;
+/* Animação de rotação */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
