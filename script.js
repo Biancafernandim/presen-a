@@ -162,9 +162,11 @@ async function handleRsvpSubmit(event) {
 
                 const calendarButton = document.getElementById('addToCalendarBtn');
                 const whatsappButton = document.getElementById('whatsappBtn');
+                // ▼▼▼ CÓDIGO CORRIGIDO/ADICIONADO ▼▼▼
+                const giftsButton = document.getElementById('goToGiftsBtn');
 
-                if (calendarButton && whatsappButton) {
-                    // --- Gera o link do Calendário com seus dados ---
+                if (calendarButton && whatsappButton && giftsButton) {
+                    
                     const eventTitle = encodeURIComponent("Casamento Yan e Bianca");
                     const eventDate = "20251227T220000Z/20251228T040000Z";
                     const eventDetails = encodeURIComponent("Traje: Esporte Fino. Mal podemos esperar para celebrar com você!");
@@ -172,18 +174,21 @@ async function handleRsvpSubmit(event) {
                     const calendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${eventTitle}&dates=${eventDate}&details=${eventDetails}&location=${eventLocation}`;
                     calendarButton.href = calendarUrl;
 
-                    // --- Gera a mensagem dinâmica do WhatsApp ---
                     const couplePhoneNumber = "5513974220783";
                     let messageBody = `Olá! Presença confirmada para o casamento!\n\nConvidado(a): ${selectedGuest.nome}`;
                     if (confirmedCompanions.length > 0) {
-                        const companionsString = confirmedCompanions.join(', ');
-                        messageBody += `\nAcompanhantes: ${companionsString}`;
+                        messageBody += `\nAcompanhantes: ${confirmedCompanions.join(', ')}`;
                     }
                     messageBody += `\n\nMal podemos esperar!`;
                     const whatsappMessage = encodeURIComponent(messageBody);
                     whatsappButton.href = `https://wa.me/${couplePhoneNumber}?text=${whatsappMessage}`;
+                    
+                    // ▼▼▼ CÓDIGO CORRIGIDO/ADICIONADO ▼▼▼
+                    giftsButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        switchTab('gifts');
+                    });
 
-                    // Mostra os botões de ação na tela
                     document.getElementById('post-rsvp-actions').classList.remove('hidden');
                 }
             } else {
@@ -195,7 +200,6 @@ async function handleRsvpSubmit(event) {
         }
     } catch (error) {
         showMessage('error', 'Houve um erro ao salvar. Por favor, tente novamente.');
-        // Restaura o botão em caso de erro
         btnText.classList.remove('hidden');
         btnLoader.classList.add('hidden');
         submitButton.disabled = false;
@@ -218,6 +222,13 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!clickedButton) return;
         switchTab(clickedButton.dataset.tab);
     });
+
+    const hash = window.location.hash;
+    if (hash) {
+        const tabId = hash.substring(1);
+        switchTab(tabId);
+    }
+
     fetchGuests();
 });
 
