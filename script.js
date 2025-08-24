@@ -192,7 +192,7 @@ async function handleRsvpSubmit(event) {
                     document.getElementById('post-rsvp-actions').classList.remove('hidden');
                 }
             } else {
-                showMessage('success', 'Que pena! Sentiremos sua falta. Agradecemos por nos avisar.');
+                showMessage('info', 'Que pena! Sentiremos sua falta. Agradecemos por nos avisar.');
             }
 
         } else {
@@ -266,3 +266,4 @@ if (copyPixButton && pixKeySpan) {
         });
     });
 }
+
