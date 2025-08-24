@@ -378,3 +378,9 @@ footer {
 #copyPixBtn:hover {
     background-color: #070044; /* Azul marinho mais escuro */
 }
+
+/* Novo estilo para mensagens de informação/neutras */
+.message-info {
+    background-color: #f0f4f8; /* Fundo cinza-azulado claro */
+    color: #5d6d7e;      /* Texto cinza escuro */
+}
