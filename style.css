@@ -204,34 +204,6 @@ footer {
     margin-bottom: 0;
 }
 
-.gift-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-/* Estilo de cada botão da lista de presentes */
-.gift-btn {
-    background-color: #0c004e;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-decoration: none;
-    display: inline-block;
-    box-sizing: border-box;
-}
-
-.gift-btn:hover {
-    background-color: #070044;
-}
-
 /* Estilos para os Botões Pós-Confirmação */
 #post-rsvp-actions {
     display: flex;
@@ -249,6 +221,7 @@ footer {
     font-weight: bold;
     color: white;
     transition: transform 0.2s ease;
+    text-align: center;
 }
 
 .post-rsvp-btn:hover {
@@ -263,25 +236,9 @@ footer {
     background-color: #86cfa1;
 }
 
-/* --- ESTILOS PARA O ÍCONE DE CARREGAMENTO NO BOTÃO --- */
-.btn-loader.hidden {
-    display: none;
-}
-
-.btn-loader {
-    width: 20px;
-    height: 20px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-top-color: #ffffff;
-    border-radius: 50%;
-    display: inline-block;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+/* ▼▼▼ CÓDIGO CORRIGIDO/ADICIONADO ▼▼▼ */
+.post-rsvp-btn.gifts {
+    background-color: #e8c57b; /* Cor dourada/amarela para o botão de presentes */
 }
 
 /* --- ESTILOS PARA A LISTA DE PRESENTES DETALHADA --- */
@@ -292,7 +249,6 @@ footer {
     margin-top: 20px;
 }
 
-/* O card de cada item de presente */
 .gift-item {
     border: 1px solid #d6e7ff;
     border-radius: 12px;
@@ -310,7 +266,6 @@ footer {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Imagem do presente com o tamanho corrigido */
 .gift-item img {
     width: 100%;
     height: 150px;
@@ -333,8 +288,44 @@ footer {
     margin: 0 0 15px 0;
 }
 
-/* Reutilizando o estilo do botão que já temos */
 .gift-item .gift-btn {
     width: 100%;
     margin-top: auto;
+    background-color: #0c004e;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.gift-item .gift-btn:hover {
+    background-color: #070044;
+}
+
+/* --- ESTILOS PARA O ÍCONE DE CARREGAMENTO NO BOTÃO --- */
+.btn-loader.hidden {
+    display: none;
+}
+
+.btn-loader {
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
