@@ -1,4 +1,4 @@
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxVAMrhRnKzsSVloVecE_nurxVHUOOLJOiMb0vXfBdjU_S7Q6J06IXSieuGk8_42pd_/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxB8Dn5dl3ENaUwPEYFzaSsf8kYn_HS0jM_12XYTjmR1bDkIZNGEN7kuFYtB-nnecg0/exec";
 
 // --- ELEMENTOS DO DOM ---
 const searchSection = document.getElementById('searchSection');
@@ -235,3 +235,4 @@ document.addEventListener('DOMContentLoaded', () => {
 searchInput.addEventListener('input', () => displayResults(searchInput.value));
 rsvpSection.addEventListener('submit', handleRsvpSubmit);
 attendanceRadios.forEach(radio => radio.addEventListener('change', handleAttendanceChange));
+
