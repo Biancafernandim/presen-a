@@ -384,3 +384,29 @@ footer {
     background-color: #f0f4f8; /* Fundo cinza-azulado claro */
     color: #5d6d7e;      /* Texto cinza escuro */
 }
+/* --- AJUSTES PARA VERSÃO MOBILE --- */
+
+@media (max-width: 550px) {
+
+    /* Ajusta o padding geral para dar mais espaço */
+    .tab-content-container {
+        padding: 25px 20px;
+    }
+
+    /* Muda o layout da seção Pix para vertical */
+    .pix-key-container {
+        flex-direction: column; /* Coloca os itens um embaixo do outro */
+        gap: 10px; /* Diminui o espaçamento vertical */
+    }
+
+    /* Faz a chave e o botão ocuparem uma largura mais consistente */
+    #pixKey, #copyPixBtn {
+        width: 90%; /* Define uma largura para ambos */
+        box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    }
+
+    /* Aumenta um pouco o texto do botão para melhor leitura */
+    #copyPixBtn {
+        font-size: 1rem;
+    }
+}
