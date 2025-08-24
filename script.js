@@ -236,3 +236,33 @@ searchInput.addEventListener('input', () => displayResults(searchInput.value));
 rsvpSection.addEventListener('submit', handleRsvpSubmit);
 attendanceRadios.forEach(radio => radio.addEventListener('change', handleAttendanceChange));
 
+// --- FUNCIONALIDADE DO BOTÃO DE COPIAR PIX ---
+
+// Encontra o botão e o texto da chave Pix na página
+const copyPixButton = document.getElementById('copyPixBtn');
+const pixKeySpan = document.getElementById('pixKey');
+
+// Adiciona um "escutador" de evento de clique ao botão
+if (copyPixButton && pixKeySpan) {
+    copyPixButton.addEventListener('click', () => {
+        // Pega o texto da chave Pix
+        const keyToCopy = pixKeySpan.textContent;
+
+        // Usa a API do navegador para copiar o texto para a área de transferência
+        navigator.clipboard.writeText(keyToCopy).then(() => {
+            // Se a cópia for bem-sucedida...
+            const originalText = copyPixButton.textContent;
+            copyPixButton.textContent = '✅ Copiado!';
+            
+            // Volta ao texto original depois de 2 segundos
+            setTimeout(() => {
+                copyPixButton.textContent = originalText;
+            }, 2000);
+
+        }).catch(err => {
+            // Se der erro (raro em navegadores modernos)
+            console.error('Erro ao copiar a chave Pix: ', err);
+            alert('Não foi possível copiar a chave. Por favor, copie manualmente.');
+        });
+    });
+}
